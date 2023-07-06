@@ -1,32 +1,33 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
 
-namespace Koleksiyonlar
+namespace Oop2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //string[] isimler = new string[] { "Engin", "Murat", "Kerem", "Halil" };
-            //Console.WriteLine(isimler[0]);
-            //Console.WriteLine(isimler[1]);
-            //Console.WriteLine(isimler[2]);
-            //Console.WriteLine(isimler[3]);
-            //isimler = new string[5];
-            //isimler[4] = "İlker";
-            //Console.WriteLine(isimler[4]);
-            //Console.WriteLine(isimler[0]);
-
-            List<string> isimler2 = new List<string> { "Engin", "Murat", "Kerem", "Halil" };
-            Console.WriteLine(isimler2[0]);
-            Console.WriteLine(isimler2[1]);
-            Console.WriteLine(isimler2[2]);
-            Console.WriteLine(isimler2[3]);
-            Console.WriteLine(isimler2[4]);
-            Console.WriteLine(isimler2[0]);
+            GercekMusteri musteri1 = new GercekMusteri();
+            musteri1.Id = 1;
+            musteri1.MusteriNo = "12345";
+            musteri1.Adi = "Engin";
+            musteri1.Soyadi = "Demiroğ";
+            musteri1.TcNo = "22222222222";
 
 
+            TuzelMusteri musteri2 = new TuzelMusteri();
+            musteri2.Id = 2;
+            musteri2.MusteriNo = "54321";
+            musteri2.SirketAdi = "Kodlama.io";
+            musteri2.VergiNo = "12345678910";
 
+
+            Musteri musteri3 = new GercekMusteri();
+            Musteri musteri4 = new TuzelMusteri();
+
+
+            MusteriManager musteriManager = new MusteriManager();
+            musteriManager.Ekle(musteri1);
+            musteriManager.Ekle(musteri2);
         }
     }
 }
